@@ -1,0 +1,9 @@
+{
+  "target": "is_high_value",
+  "required_feature_columns": [
+    "country",
+    "n_orders",
+    "avg_amount",
+    "total_amount"
+  ]
+}
