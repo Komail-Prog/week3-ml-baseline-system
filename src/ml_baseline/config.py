@@ -6,7 +6,7 @@ class Paths:
     root: Path
     processed: Path
     reports: Path
-    figures: Path
+    
 
     @classmethod
     def from_repo_root(cls) -> "Paths":
@@ -20,7 +20,7 @@ def make_paths(root: Path) -> Paths:
         root=root,
         processed=data / "processed",
         reports=reports,
-        figures=reports / "figures",
+        
     )
 
 @dataclass(frozen=True)
@@ -30,3 +30,4 @@ class TrainCfg:
     id_cols: tuple[str, ...] = ("user_id",)
     session_id: int = 42
     time_col: str | None = None
+    task: str = "classification"

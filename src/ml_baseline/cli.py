@@ -10,11 +10,16 @@ app = typer.Typer()
 def train(target: str = "is_high_value"):
     """Run training for the sample target."""
     paths = Paths.from_repo_root()
+    #target: str = "is_high_value",
+    task: str = "classification", 
+    session_id: int = 42
     
   
     cfg = TrainCfg(
         features_path=paths.processed / "features.parquet",
-        target=target
+        target=target,
+        task=task,  
+        session_id=session_id
     )
     
  

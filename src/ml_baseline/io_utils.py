@@ -42,3 +42,13 @@ def read_users_csv(path: Path) -> pd.DataFrame:
         dtype={"user_id": "string"},
         na_values=NA_VALUES,
     )
+
+def require_columns(df, cols):
+    missing = [c for c in cols if c not in df.columns]
+    assert not missing, f"Missing columns: {missing}"
+
+def assert_no_duplicate_key(df, key_cols):
+    dup = df.duplicated(subset=key_cols, keep=False)
+    assert not dup.any(), (
+        f"Duplicate rows for key={key_cols} (n={dup.sum()})"
+    )

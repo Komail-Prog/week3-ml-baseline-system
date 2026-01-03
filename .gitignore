@@ -1,4 +1,4 @@
-# Python-generated files
+    
 __pycache__/
 *.py[oc]
 build/
@@ -8,19 +8,14 @@ wheels/
 .DS_Store
 Thumbs.db
 
-# Virtual environments
+
 .venv
 
-# --- ML Project Artifacts ---
-
-# Data: Raw and processed datasets (re-creatable or sensitive)
 data/
 outputs/
 
-# Models: Binary files, run metadata, and saved metrics
 models/runs/
 *.pkl
 *.joblib
 
-# Logs: Session logs and debug output
 *.log
